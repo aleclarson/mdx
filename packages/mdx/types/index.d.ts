@@ -1,6 +1,6 @@
 // TypeScript Version: 3.4
 
-import {Plugin, Compiler, Processor} from 'unified'
+import {Plugin, Compiler, Processor, Node} from 'unified'
 
 declare namespace mdx {
   interface Options {
@@ -54,6 +54,8 @@ declare namespace mdx {
    * @returns jsx text
    */
   function sync(mdx: string, options?: Options): string
+
+  function parse(mdx: string, options?: Options): Node
 
   /**
    * Generated an MDX compiler

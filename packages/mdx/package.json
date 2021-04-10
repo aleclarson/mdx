@@ -49,17 +49,15 @@
     "camelcase-css": "2.0.1",
     "detab": "2.0.3",
     "hast-to-hyperscript": "9.0.0",
-    "hast-util-raw": "6.0.0",
     "lodash.uniq": "4.5.0",
     "mdast-util-to-hast": "9.1.0",
-    "remark-footnotes": "1.0.0",
+    "rehype-minify-whitespace": "4.0.5",
     "remark-mdx": "^2.0.0-next.8",
     "remark-mdxjs": "^2.0.0-next.8",
     "remark-parse": "8.0.2",
     "remark-squeeze-paragraphs": "4.0.0",
     "unified": "9.0.0",
-    "unist-builder": "2.0.3",
-    "unist-util-visit": "2.0.3"
+    "unist-builder": "2.0.3"
   },
   "gitHead": "bf7deab69996449cb99c2217dff75e65855eb2c1"
 }
