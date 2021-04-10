@@ -10,11 +10,20 @@ const pragma = `/* @jsxRuntime classic */
 /* @jsx mdx */
 /* @jsxFrag mdx.Fragment */`
 
+const mdxParse = {
+  plugins: [remarkParse, remarkMdx, squeeze],
+}
+
+function parse(mdx, options = {}) {
+  return unified()
+    .use(mdxParse)
+    .use(options.remarkPlugins)
+    .parse(mdx)
+}
+
 function createMdxAstCompiler(options = {}) {
   return unified()
-    .use(remarkParse)
-    .use(remarkMdx)
-    .use(squeeze)
+    .use(mdxParse)
     .use(options.remarkPlugins)
     .use(mdxAstToMdxHast)
 }
@@ -49,5 +58,6 @@ async function compile(mdx, options = {}) {
 module.exports = compile
 compile.default = compile
 compile.sync = sync
+compile.parse = parse
 compile.createMdxAstCompiler = createMdxAstCompiler
 compile.createCompiler = createCompiler
