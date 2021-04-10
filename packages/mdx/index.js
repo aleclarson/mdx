@@ -16,10 +16,14 @@ const mdxParse = {
 }
 
 function parse(mdx, options = {}) {
-  return unified()
+  const compiler = unified()
     .use(mdxParse)
     .use(options.remarkPlugins)
-    .parse(mdx)
+
+  const ast = compiler.parse(mdx)
+  return options.remarkPlugins
+    ? compiler.runSync(ast)
+    : ast
 }
 
 function createMdxAstCompiler(options = {}) {
