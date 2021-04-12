@@ -19,9 +19,7 @@
     "Christian Murphy <christian.murphy.42@gmail.com>"
   ],
   "license": "MIT",
-  "main": "dist/cjs.js",
-  "module": "dist/esm.js",
-  "types": "types/index.d.ts",
+  "main": "src/index.js",
   "files": [
     "dist",
     "types/index.d.ts"
